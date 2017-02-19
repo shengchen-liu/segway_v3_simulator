@@ -11,7 +11,7 @@ Until we have released our packages in the ROS distro please follow these instru
   * This guide was completed on a PC with the following specifications, depending on the PC you are using simulation performance may vary but the as-tested setup will allow for realtime simulation.
     * Intel Core i7-6950X 25M Broadwell-E 10-Core 3.0 GHz LGA 2011-v3 140W BX80671I76950X Desktop Processor
     * X99-E Motherboard
-    * 64MB DDR4 3200 quad channel Memory
+    * 64GB DDR4 3200 quad channel Memory
     * 2x NVIDIA 980Ti GPU with SLI enabled
     * Samsung 950 PRO M.2 512GB NVMe SSD
     * Fully updated fresh install of Ubuntu 14.04.5 LTS Desktop
