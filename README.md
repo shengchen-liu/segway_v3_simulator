@@ -154,8 +154,26 @@ From a linux machine connected to the internet run the following commands
 
 # Congratulations!!! If you got here the simulation is all setup!!! You can run any of the demo applications in ~/segway_ws/src/segway_v3/segway_navigation/segway_navigation_apps/launch for mapping and navigation. Remember to add the sim:=true argument.
 
-#You can control the simulated platform with the interactive marker in RVIZ or if you have a joystick by launching the joy node with roslaunch segway_remote_teleop segway_remote_teleop.launch  
- 
+#You can control the simulated platform with the interactive marker in RVIZ or if you have a joystick by launching the joy node with roslaunch segway_remote_teleop segway_remote_teleop.launch
+
+#To shortcut the whole process just cut and paste the following and make sure you replace **USERNAME** with your username  
+
+```
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list' &&   sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116 && sudo apt-get update && sudo apt-get install ros-indigo-desktop-full && sudo rm -f /etc/ros/rosdep/sources.list.d/20-default.list && sudo rosdep init && rosdep update && echo "  function save_map()
+  {
+    if [ ! -z "$1" ]
+    then
+      local dest='/home/**USERNAME**/segway_ws/src/segway_v3/segway_navigation/segway_navigation_apps/maps/'$1
+    else
+      local dest='/home/**USERNAME**/segway_ws/src/segway_v3/segway_navigation/segway_navigation_apps/maps/mymap'
+    fi
+
+    rosrun map_server map_saver -f $dest
+  }
+  
+  source /opt/ros/indigo/setup.bash
+  alias sws='source ./devel/setup.bash'" >> ~/.bashrc && source ~/.bashrc && sudo apt-get install python-rosinstall && sudo apt-get install iperf chrony htop bridge-utils && sudo apt-get install ros-indigo-navigation ros-indigo-gmapping ros-indigo-robot-localization ros-indigo-yocs-cmd-vel-mux ros-indigo-joy ros-indigo-urg-node ros-indigo-sick-tim ros-indigo-pointgrey-camera-driver ros-indigo-cmake-modules daemontools openssh-server libpcap0.8-dev ros-indigo-um7 ros-indigo-imu-tools ros-indigo-jsk-recognition ros-indigo-ros-controllers ros-indigo-scan-tools ros-indigo-gazebo-ros  ros-indigo-gazebo-plugins ros-indigo-moveit-ros ros-indigo-gazebo-ros-control ros-indigo-hector-gazebo-plugins && rm -rf ~/segway_ws && mkdir -p ~/segway_ws/src && cd ~/segway_ws/src && catkin_init_workspace && cd .. && catkin_make && cd ~/segway_ws/src && git clone https://github.com/StanleyInnovation/segway_v3.git && git clone https://github.com/StanleyInnovation/segway_v3_robot.git && git clone https://github.com/StanleyInnovation/segway_v3_desktop.git && git clone https://github.com/StanleyInnovation/segway_v3_simulator.git && cd ~/segway_ws && catkin_make && source ./devel/setup.bash && roslaunch segway_gazebo segway_playpen.launch
+```
    
 
 
