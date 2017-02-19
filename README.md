@@ -152,7 +152,7 @@ From a linux machine connected to the internet run the following commands
   roslaunch segway_viz view_robot.launch
   ```
 
-# Congratulation!!! If you got here the simulation is all setup!!! You can run any of the demo applications in ~/segway_ws/src/segway_v3/segway_navigation/segway_navigation_apps/launch for mapping and navigation. Remember to add the sim:=true argument.
+# Congratulations!!! If you got here the simulation is all setup!!! You can run any of the demo applications in ~/segway_ws/src/segway_v3/segway_navigation/segway_navigation_apps/launch for mapping and navigation. Remember to add the sim:=true argument.
 
 #You can control the simulated platform with the interactive marker in RVIZ or if you have a joystick by launching the joy node with roslaunch segway_remote_teleop segway_remote_teleop.launch  
  
